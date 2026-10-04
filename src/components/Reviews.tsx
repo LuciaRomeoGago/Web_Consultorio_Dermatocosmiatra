@@ -11,7 +11,8 @@ const Title = ({ id }: { id?: string }) => (
 
 /**
  * Sección "Testimonios". Escritorio: una tarjeta con el texto a la izquierda y la foto a la derecha,
- * con flechas y contador (1 / 3). Celular: las reseñas se deslizan como tarjetas.
+ * con flechas y contador (1 / 3). Como en Figma, la foto nueva entra desde la izquierda pasando por
+ * debajo del panel translúcido y la anterior sale por la derecha. Celular: las reseñas se deslizan como tarjetas.
  */
 export function Reviews() {
   const [index, setIndex] = useState(0);
@@ -25,7 +26,13 @@ export function Reviews() {
         <div className="reviews__card">
           <div className="reviews__images">
             {reviews.map((r, i) => (
-              <img key={r.img} src={img(r.imgWide ?? r.img)} alt="" data-active={i === index} loading="lazy" />
+              <img
+                key={r.img}
+                src={img(r.imgWide ?? r.img)}
+                alt=""
+                data-state={i === index ? 'active' : i < index ? 'before' : 'after'}
+                loading="lazy"
+              />
             ))}
           </div>
           <div className="reviews__panel">

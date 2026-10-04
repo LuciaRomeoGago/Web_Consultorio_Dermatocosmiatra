@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { NotSureCard } from '../components/NotSureCard';
 import { ProductCard } from '../components/ProductCard';
@@ -13,6 +13,13 @@ const isCategory = (value: string | null): value is Category => categories.inclu
 
 type Sort = 'destacados' | 'menor precio' | 'mayor precio';
 const sorts: Sort[] = ['destacados', 'menor precio', 'mayor precio'];
+
+/** En celular Figma muestra la grilla en otro orden: "lifting" sube antes de "defensa" y "luz" baja después de "calma". */
+const mobileFirst = ['emulsion-limpieza-suave', 'acqua-di-jojoba', 'asthera-day', 'suero-glamour', 'bio-top-skin-support', 'emulfresh', 'rutina-luz', 'suero-rediles'];
+const mobileOrder = (p: Product, i: number) => {
+  const at = mobileFirst.indexOf(p.slug);
+  return at === -1 ? i : at;
+};
 
 /** Los productos sin precio ("Consultar") van al final en los dos órdenes por precio. */
 const byPrice = (dir: 1 | -1) => (a: Product, b: Product) => {
@@ -32,7 +39,8 @@ export function Tienda() {
   const filtered = active ? listedProducts.filter((p) => p.category === active) : listedProducts;
   const visible =
     sort === 'destacados' ? filtered : [...filtered].sort(byPrice(sort === 'menor precio' ? 1 : -1));
-  const showNotSure = !active && sort === 'destacados';
+  const featured = !active && sort === 'destacados';
+  const showNotSure = featured;
 
   const choose = (category: Category | null) => setParams(category ? { categoria: category } : {}, { replace: true });
 
@@ -84,7 +92,12 @@ export function Tienda() {
           <div className="product-grid shop__grid">
             {/* El orden lo da CSS: la tarjeta "¿No sabés qué usar?" va después del 5.º producto en escritorio y del 4.º en celular. */}
             {visible.map((p, i) => (
-              <ProductCard key={p.slug} product={p} variant="grid" style={{ order: i * 2 }} />
+              <ProductCard
+                key={p.slug}
+                product={p}
+                variant="grid"
+                style={{ '--order': i * 2, '--order-m': (featured ? mobileOrder(p, i) : i) * 2 } as CSSProperties}
+              />
             ))}
             {showNotSure && <NotSureCard wide />}
           </div>

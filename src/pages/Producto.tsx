@@ -104,7 +104,7 @@ function Buy({ product }: { product: Product }) {
         <div className="pd-thumbs" role="group" aria-label="Fotos del producto">
           {gallery.map((key, i) => (
             <button key={key} aria-pressed={photo === i} aria-label={`Ver foto ${i + 1}`} onClick={() => setPhoto(i)}>
-              <img src={img(key)} alt="" loading="lazy" />
+              <img src={img(key)} alt="" loading="lazy" data-fit={i === 0 && product.fullBleed ? undefined : 'contain'} />
             </button>
           ))}
         </div>
@@ -113,7 +113,13 @@ function Buy({ product }: { product: Product }) {
       <div className="pd-gallery">
         <div className="pd-gallery__frame">
           {gallery.map((key, i) => (
-            <img key={key} src={img(key)} alt={i === 0 ? product.name : ''} data-state={slide(i, photo)} />
+            <img
+              key={key}
+              src={img(key)}
+              alt={i === 0 ? product.name : ''}
+              data-state={slide(i, photo)}
+              data-fit={i === 0 && product.fullBleed ? undefined : 'contain'}
+            />
           ))}
         </div>
         {gallery.length > 1 && (
@@ -134,9 +140,9 @@ function Buy({ product }: { product: Product }) {
 
         {/* Celular: las fotos se deslizan. */}
         <ul className="scroller pd-gallery__mobile" aria-label="Fotos del producto">
-          {gallery.map((key) => (
+          {gallery.map((key, i) => (
             <li key={key}>
-              <img src={img(key)} alt="" loading="lazy" />
+              <img src={img(key)} alt="" loading="lazy" data-fit={i === 0 && product.fullBleed ? undefined : 'contain'} />
             </li>
           ))}
         </ul>
@@ -273,7 +279,7 @@ function OwnGlow({ product, detail }: Section) {
         <div className="pd-slider">
           <div className="pd-slider__images" aria-hidden="true">
             {items.map((it, i) => (
-              <img key={it.slug} src={img(it.product.img)} alt="" loading="lazy" data-state={slide(i, active)} />
+              <img key={it.slug} src={img(it.product.img)} alt="" loading="lazy" data-state={slide(i, active)} data-fit="contain" />
             ))}
           </div>
           <div className="pd-slider__panel">
@@ -297,7 +303,7 @@ function OwnGlow({ product, detail }: Section) {
             </div>
             <div className="pd-circles" role="group" aria-label="Productos de la rutina">
               {items.map((it, i) => (
-                <button key={it.slug} aria-pressed={i === active} onClick={() => setActive(i)}>
+                <button key={it.slug} aria-pressed={i === active} onClick={() => setActive(i)} onMouseEnter={() => setActive(i)}>
                   {shortName(it.product.name)}
                 </button>
               ))}
@@ -360,7 +366,7 @@ function HowToUse({ detail }: { detail: ProductDetail }) {
             </div>
             <div className="pd-circles pd-circles--num" role="group" aria-label="Pasos">
               {steps.map((s, i) => (
-                <button key={s.slug} aria-pressed={i === active} aria-label={`Paso ${i + 1}: ${s.product.name}`} onClick={() => setActive(i)}>
+                <button key={s.slug} aria-pressed={i === active} aria-label={`Paso ${i + 1}: ${s.product.name}`} onClick={() => setActive(i)} onMouseEnter={() => setActive(i)}>
                   {pad(i)}
                 </button>
               ))}
@@ -378,7 +384,7 @@ function HowToUse({ detail }: { detail: ProductDetail }) {
         <ol className="scroller pd-cards">
           {steps.map((s, i) => (
             <li key={s.slug}>
-              <img src={img(s.useImg)} alt="" loading="lazy" />
+              <img src={img(s.useImgMobile ?? s.useImg)} alt="" loading="lazy" />
               <p className="pd-cards__step">
                 <span>{pad(i)}</span> {s.when}
               </p>
@@ -439,7 +445,7 @@ function AddSession({ product, detail }: Section) {
             <p className="pd-label pd-label--lg">Sumá tu sesión</p>
             <div className="pd-session__words" role="group" aria-label="Dónde">
               {keys.map((k) => (
-                <button key={k} aria-pressed={where === k} onClick={() => setWhere(k)}>
+                <button key={k} aria-pressed={where === k} onClick={() => setWhere(k)} onMouseEnter={() => setWhere(k)}>
                   en {k}
                 </button>
               ))}

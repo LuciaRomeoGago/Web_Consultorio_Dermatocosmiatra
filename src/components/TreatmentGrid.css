@@ -46,3 +46,9 @@
 .treatment-card:focus-visible .treatment-card__dot {
   opacity: 1;
 }
+
+@media (max-width: 760px) {
+  .treatment-row > li {
+    order: var(--order-m);
+  }
+}

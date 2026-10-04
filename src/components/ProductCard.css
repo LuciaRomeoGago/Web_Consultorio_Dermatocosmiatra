@@ -14,6 +14,7 @@
 
 .product-card__hover,
 .product-card__bg {
+  transition: opacity 0.45s var(--ease);
   position: absolute;
   inset: 0;
   width: 100%;
@@ -121,6 +122,12 @@
   .product-card:focus-within .product-card__photo {
     opacity: 0;
     transform: translateY(-10px);
+  }
+
+  /* Tarjeta con foto a sangre (rutina luz): la foto se va para dejar ver la foto de uso, como en las demás. */
+  .product-card:hover .product-card__bg,
+  .product-card:focus-within .product-card__bg {
+    opacity: 0;
   }
 
   .product-card:hover .product-card__info,

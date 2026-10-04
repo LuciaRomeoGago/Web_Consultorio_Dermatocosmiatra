@@ -53,10 +53,19 @@ export interface ProductDetail {
   breadcrumb: string;
   description: string;
   /**
-   * Productos que trae una rutina: qué es, cuándo (corto para "Cómo usarla" y largo para "Brillo propio"),
-   * cómo se aplica y la foto de la modelo usándolo.
+   * Productos que trae una rutina: qué es, cuándo (corto para "Cómo usarla" y largo para "Brillo propio")
+   * y cómo se aplica.
    */
-  includes: { slug: string; text: string; when: string; whenLong: string; howTo: string; useImg: string }[];
+  includes: {
+    slug: string;
+    text: string;
+    when: string;
+    whenLong: string;
+    howTo: string;
+    /** Foto de la modelo usándolo: `useImg` en escritorio y `useImgMobile` en la tarjeta de celular, si Figma usa otra. */
+    useImg: string;
+    useImgMobile?: string;
+  }[];
   /** "02 · Detalles": frase, foto y filas. */
   phrase: Rich;
   detailImg: string;

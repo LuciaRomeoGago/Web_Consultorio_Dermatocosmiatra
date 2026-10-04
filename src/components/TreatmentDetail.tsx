@@ -64,6 +64,7 @@ export function TreatmentDetail() {
                   aria-expanded={open}
                   aria-controls={panelId}
                   onClick={() => setActive(i)}
+                  onMouseEnter={() => setActive(i)}
                 >
                   <span className="tdetail__num">{pad(i)}</span>
                   <span className="tdetail__name">{t.name}</span>

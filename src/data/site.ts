@@ -1,7 +1,7 @@
 export const site = {
   name: 'Jazmín Sarasti Dermocosmética',
-  topBar: ['Turnos online en menos de 2 minutos', 'Chacabuco 565 1B', 'Envíos a todo el país'],
-  address: 'Chacabuco 565 1B',
+  topBar: ['Turnos online en menos de 2 minutos', 'Chacabuco 985 1B', 'Envíos a todo el país'],
+  address: 'Chacabuco 985 1B',
   city: 'Tandil, Buenos Aires',
   hours: 'Lunes a viernes de 8 a 20 hs',
   /** Días y horario de atención, usados para armar los turnos. */

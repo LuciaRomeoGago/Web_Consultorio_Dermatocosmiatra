@@ -107,7 +107,7 @@ function Focus() {
             </div>
             <div className="ab-focus__tabs" role="tablist" aria-label="Mi enfoque">
               {approach.tabs.map((t, i) => (
-                <button key={t.label} role="tab" aria-selected={i === active} onClick={() => setActive(i)}>
+                <button key={t.label} role="tab" aria-selected={i === active} onClick={() => setActive(i)} onMouseEnter={() => setActive(i)}>
                   {t.label}
                 </button>
               ))}
@@ -181,7 +181,7 @@ function Values() {
             <p className="ab-label">Nuestros valores</p>
             <div className="ab-values__words" role="group" aria-label="Nuestros valores">
               {page.values.map((v, i) => (
-                <button key={v.title} aria-pressed={i === active} onClick={() => setActive(i)}>
+                <button key={v.title} aria-pressed={i === active} onClick={() => setActive(i)} onMouseEnter={() => setActive(i)}>
                   {v.title}
                 </button>
               ))}

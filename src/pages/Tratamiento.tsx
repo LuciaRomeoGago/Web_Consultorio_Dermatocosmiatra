@@ -133,7 +133,7 @@ function Process({ treatment }: Props) {
             </div>
             <div className="tr-process__dots" role="group" aria-label="Pasos de la sesión">
               {steps.map((s, i) => (
-                <button key={s.title} aria-pressed={i === active} aria-label={`Paso ${i + 1}: ${s.title}`} onClick={() => setActive(i)}>
+                <button key={s.title} aria-pressed={i === active} aria-label={`Paso ${i + 1}: ${s.title}`} onClick={() => setActive(i)} onMouseEnter={() => setActive(i)}>
                   {pad(i)}
                 </button>
               ))}
@@ -202,7 +202,7 @@ function Care({ treatment }: Props) {
           <p className="tr-label">Cuidados</p>
           <div className="tr-care__words" role="group" aria-label="Momento">
             {(['pre', 'post'] as const).map((m) => (
-              <button key={m} aria-pressed={moment === m} onClick={() => setMoment(m)}>
+              <button key={m} aria-pressed={moment === m} onClick={() => setMoment(m)} onMouseEnter={() => setMoment(m)}>
                 {m}
               </button>
             ))}
@@ -267,7 +267,7 @@ function Actives({ treatment }: Props) {
             <p className="tr-label">Activos clave</p>
             <div className="tr-actives__words" role="group" aria-label="Activos clave">
               {actives.map((a, i) => (
-                <button key={a.word} aria-pressed={i === active} onClick={() => setActive(i)}>
+                <button key={a.word} aria-pressed={i === active} onClick={() => setActive(i)} onMouseEnter={() => setActive(i)}>
                   {a.word}
                 </button>
               ))}

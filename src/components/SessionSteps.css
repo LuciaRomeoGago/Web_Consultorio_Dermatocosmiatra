@@ -21,7 +21,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 50% 0;
-  transition: transform 0.8s var(--ease);
+  transition: transform 0.5s ease-in-out; /* Smart Animate de Figma */
 }
 
 .steps__images img[data-state='before'] {
@@ -49,7 +49,7 @@
   display: grid;
   gap: 18px;
   max-width: 566px;
-  animation: steps-in 0.5s var(--ease);
+  animation: steps-in 0.5s ease-in-out;
 }
 
 @keyframes steps-in {

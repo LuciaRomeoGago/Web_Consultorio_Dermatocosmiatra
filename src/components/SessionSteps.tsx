@@ -44,7 +44,7 @@ export function SessionSteps({ steps }: { steps: readonly Step[] }) {
           <ol className="steps__list" aria-label="Etapas de una sesión">
             {steps.map((s, i) => (
               <li key={s.label}>
-                <button className="steps__step" aria-current={i === active ? 'step' : undefined} onClick={() => setActive(i)}>
+                <button className="steps__step" aria-current={i === active ? 'step' : undefined} onClick={() => setActive(i)} onMouseEnter={() => setActive(i)}>
                   {s.label}
                 </button>
               </li>

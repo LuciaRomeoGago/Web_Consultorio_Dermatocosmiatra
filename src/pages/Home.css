@@ -469,6 +469,15 @@
     scroll-snap-align: start;
   }
 
+  /* En celular Figma muestra primero "lifting" y después "defensa". */
+  .home-shop__grid > .product-card:first-child {
+    order: 1;
+  }
+
+  .home-shop__grid > .not-sure {
+    order: 2;
+  }
+
   /* Rutinas completas: título, foto de 420 y texto. */
   .home-routine {
     padding-bottom: 56px;

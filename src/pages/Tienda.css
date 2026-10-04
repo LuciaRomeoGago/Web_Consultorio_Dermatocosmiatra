@@ -131,6 +131,10 @@
   gap: 22px;
 }
 
+.shop__grid .product-card {
+  order: var(--order);
+}
+
 .shop__grid .not-sure {
   order: 9;
 }
@@ -232,6 +236,10 @@
     gap: 12px;
     margin: 24px -8px 0;
     padding-bottom: 56px;
+  }
+
+  .shop__grid .product-card {
+    order: var(--order-m);
   }
 
   .shop__grid .not-sure {
