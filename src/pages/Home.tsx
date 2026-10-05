@@ -59,7 +59,7 @@ export function Home() {
 function Salud() {
   return (
     <section className="home-salud">
-      <img className="home-salud__img" src={img(home.salud.img)} alt="" loading="lazy" />
+      <img className="home-salud__img" src={img(home.salud.img)} alt="" fetchPriority="high" />
       <div className="home-salud__panel">
         <div className="home-salud__content">
           <h2 className="t-display">salud &amp; piel</h2>
