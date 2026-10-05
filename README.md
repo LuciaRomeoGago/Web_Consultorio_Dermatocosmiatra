@@ -5,7 +5,7 @@ Sitio web para un consultorio de dermocosmética en Tandil. Presenta los tratami
 Es un proyecto de portfolio de **Lucía Romeo Gago**: hice el diseño UX/UI en Figma y el desarrollo frontend en React, a partir de ese diseño.
 
 - Diseño: [Figma](https://www.figma.com/design/jOONiVqNAMVfCLfyk5uzUo/Dermatocosmetica)
-- Demo: _pendiente_
+- Demo: [web-consultorio-dermatocosmiatra.vercel.app](https://web-consultorio-dermatocosmiatra.vercel.app/)
 
 | Escritorio | Celular |
 | --- | --- |
