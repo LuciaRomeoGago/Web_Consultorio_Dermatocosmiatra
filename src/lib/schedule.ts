@@ -26,10 +26,8 @@ export function timeSlots(minutes: number, step = 60): string[] {
   return slots;
 }
 
-const dayFormat = new Intl.DateTimeFormat('es-AR', { weekday: 'short', day: 'numeric', month: 'short' });
 const longFormat = new Intl.DateTimeFormat('es-AR', { weekday: 'long', day: 'numeric', month: 'long' });
 
-export const formatDay = (d: Date) => dayFormat.format(d).replace('.', '');
 export const formatLongDay = (d: Date) => longFormat.format(d);
 
 /** Clave estable de un día (AAAA-MM-DD) para usar en el estado y en keys. */

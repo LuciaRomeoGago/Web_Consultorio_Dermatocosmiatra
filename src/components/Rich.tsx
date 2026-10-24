@@ -12,10 +12,11 @@ interface Props {
 export function Rich({ text, as: Tag = 'h2', className }: Props) {
   return (
     <Tag className={className}>
-      {text.map(([part, script], i) => (script ? <span key={i} className="script">{part}</span> : <span key={i}>{part}</span>))}
+      {text.map(([part, script], i) => (
+        <span key={i} className={script ? 'script' : undefined}>
+          {part}
+        </span>
+      ))}
     </Tag>
   );
 }
-
-/** Versión en texto plano, para atributos como alt o title. */
-export const plain = (text: RichText) => text.map(([part]) => part).join('');

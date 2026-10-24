@@ -154,19 +154,11 @@ ol {
   padding-block: var(--section-y);
 }
 
-.section--panel {
-  background: var(--gris-panel);
-}
-
 .split {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(24px, 4vw, 64px);
   align-items: center;
-}
-
-.split--top {
-  align-items: start;
 }
 
 @media (max-width: 860px) {
@@ -181,27 +173,6 @@ ol {
   gap: 20px;
   align-content: start;
   justify-items: start;
-}
-
-.stack-lg {
-  display: grid;
-  gap: clamp(32px, 4vw, 56px);
-}
-
-.section-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px 32px;
-  margin-bottom: clamp(28px, 3vw, 48px);
-}
-
-.rounded-img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: var(--radius);
 }
 
 /* Hilera que se desliza con el dedo (tratamientos, productos y posteos en celular). */
@@ -298,23 +269,10 @@ ol {
   line-height: 0.6;
 }
 
-/* Desktop/Etiqueta: mayúsculas, SemiBold. */
-.eyebrow {
-  font-size: var(--fs-etiqueta);
-  font-weight: 600;
-  letter-spacing: var(--ls-etiqueta);
-  text-transform: uppercase;
-  color: var(--tinta);
-}
-
 .lead {
   font-size: var(--fs-body-l);
   line-height: var(--lh-body);
   max-width: 52ch;
-}
-
-.muted {
-  color: var(--texto);
 }
 
 /* ---------- Botones (componente "Botón" de Figma) ---------- */
@@ -366,11 +324,6 @@ ol {
 .btn--secondary:hover {
   background: var(--tinta);
   color: var(--blanco);
-}
-
-.btn--light {
-  background: var(--lavanda);
-  color: var(--tinta);
 }
 
 /* Link subrayado en mayúsculas ("Ver todos", "Ir a la tienda"). */
@@ -462,11 +415,6 @@ ol {
   }
 }
 
-.shop-count {
-  margin: 24px 0 32px;
-  font-size: var(--fs-caption);
-}
-
 /* ---------- Formularios ---------- */
 
 .field {
@@ -510,31 +458,6 @@ ol {
 .field__error {
   font-size: var(--fs-caption);
   color: #b3261e;
-}
-
-/* Lista corta con miniatura: "Incluye", "Completá tu rutina". */
-.mini-list {
-  display: grid;
-  border-top: 1px solid var(--gris-medio);
-}
-
-.mini-list li {
-  display: grid;
-  grid-template-columns: 56px 1fr auto;
-  align-items: center;
-  gap: 16px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--gris-medio);
-  font-weight: 500;
-  color: var(--tinta);
-}
-
-.mini-list img {
-  width: 56px;
-  height: 56px;
-  object-fit: cover;
-  border-radius: var(--radius);
-  background: var(--gris-reservas);
 }
 
 /* ---------- Animaciones compartidas ---------- */

@@ -1,7 +1,7 @@
 import type { ReactNode, MouseEventHandler } from 'react';
 import { Link } from 'react-router-dom';
 
-type Variant = 'primary' | 'secondary' | 'soft' | 'link' | 'light';
+type Variant = 'primary' | 'secondary' | 'soft' | 'link';
 
 interface Props {
   children: ReactNode;

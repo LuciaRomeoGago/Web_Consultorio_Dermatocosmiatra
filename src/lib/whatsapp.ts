@@ -16,6 +16,13 @@ export interface Contact {
   comment?: string;
 }
 
+const contactLines = (c: Contact) => [
+  `Nombre: ${c.name}`,
+  `WhatsApp: ${c.phone}`,
+  `Email: ${c.email}`,
+  ...(c.comment ? [`Comentario: ${c.comment}`] : []),
+];
+
 export function orderMessage(items: CartItem[], subtotal: number, contact: Contact, payment: string) {
   const lines = items.map(
     (i) =>
@@ -29,10 +36,7 @@ export function orderMessage(items: CartItem[], subtotal: number, contact: Conta
     `Subtotal: ${formatPrice(subtotal)}`,
     `Forma de pago: ${payment}`,
     '',
-    `Nombre: ${contact.name}`,
-    `WhatsApp: ${contact.phone}`,
-    `Email: ${contact.email}`,
-    ...(contact.comment ? [`Comentario: ${contact.comment}`] : []),
+    ...contactLines(contact),
   ].join('\n');
 }
 
@@ -43,9 +47,6 @@ export function bookingMessage(treatment: string, when: string, contact: Contact
     `Tratamiento: ${treatment}`,
     `Día y horario: ${when}`,
     '',
-    `Nombre: ${contact.name}`,
-    `WhatsApp: ${contact.phone}`,
-    `Email: ${contact.email}`,
-    ...(contact.comment ? [`Comentario: ${contact.comment}`] : []),
+    ...contactLines(contact),
   ].join('\n');
 }

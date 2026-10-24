@@ -1,23 +1,9 @@
-import type { ReactNode } from 'react';
 import { protocol } from '../data/content';
 import type { Rich as RichText } from '../data/types';
 import { img } from '../lib/format';
 import { Button } from './Button';
 import { Rich } from './Rich';
 import './Blocks.css';
-
-/** Encabezado de página con foto de fondo y título mixto. */
-export function PageHero({ title, image, children }: { title: RichText; image: string; children?: ReactNode }) {
-  return (
-    <section className="page-hero">
-      <img className="page-hero__img" src={img(image)} alt="" />
-      <div className="container page-hero__content">
-        <Rich as="h1" className="title page-hero__title" text={title} />
-        {children}
-      </div>
-    </section>
-  );
-}
 
 /** Frase destacada a lo ancho, entre secciones. */
 export function Quote({ text, className = '' }: { text: RichText; className?: string }) {

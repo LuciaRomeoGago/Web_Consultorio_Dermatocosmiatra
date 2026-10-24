@@ -2,14 +2,6 @@ import type { Faq, Review, Rich } from './types';
 
 /** Textos de cada página, tal como están en el diseño de Figma. */
 
-export const quoteMain: Rich = [
-  ['“Cuidamos la ', 0],
-  ['salud', 1],
-  [' de tu piel como nuestra ', 0],
-  ['máxima prioridad', 1],
-  ['.”', 0],
-];
-
 export const home = {
   heroImg: '37c4d3246e',
   salud: {
