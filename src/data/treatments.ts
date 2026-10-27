@@ -348,14 +348,14 @@ export const treatments: Treatment[] = [
     tagline: 'Firmeza, densidad y juventud duradera',
     meta: '45 min · $60.000',
     detail:
-      'Formulado para tratar los signos del envejecimiento. Para este tratamiento elegimos productos de primera calidad que estimulan la producción de colágeno y elastina, reduciendo la apariencia de arrugas y líneas de expresión, y mejorando la firmeza y elasticidad de la piel.\nLas sesiones duran 45-60 minutos. Se recomienda un plan de 4 a 6 sesiones iniciales (frecuencia según indicación profesional), con sesiones de mantenimiento mensuales.',
+      'Formulado para tratar los signos del envejecimiento. Para este tratamiento elegimos productos de primera calidad que estimulan la producción de colágeno y elastina, reduciendo la apariencia de arrugas y líneas de expresión, y mejorando la firmeza y elasticidad de la piel.\nLas sesiones duran 45 minutos. Se recomienda un plan de 4 a 6 sesiones iniciales (frecuencia según indicación profesional), con sesiones de mantenimiento mensuales.',
     cardImg: '1a3d381f58',
     page: {
       hero: {
         img: '39f128d9bd',
         title: [['tratamiento ', 0], ['antiage', 1]],
         desc: 'Enfocado en prevenir y tratar los signos del envejecimiento cutáneo: líneas de expresión, pérdida de firmeza, luminosidad opaca y textura irregular.\nIndicado para pieles maduras o pieles jóvenes que quieren empezar una rutina preventiva, estimulando la renovación celular y la producción de colágeno.',
-        duration: '45-60 min',
+        duration: '45 min',
         plan: '4 a 6 sesiones',
         price: '$60.000',
       },
@@ -374,9 +374,9 @@ export const treatments: Treatment[] = [
       ],
       duration: {
         img: '6511677a9b',
-        phrase: [['Las ', 0], ['sesiones', 1], ['\nduran 45-60 minutos.', 0]],
+        phrase: [['Las ', 0], ['sesiones', 1], ['\nduran 45 minutos.', 0]],
         rows: [
-          ['Duración:', '45-60 minutos'],
+          ['Duración:', '45 minutos'],
           ['Plan inicial:', '4 a 6 sesiones'],
           ['Frecuencia:', 'Según indicación profesional'],
           ['Mantenimiento:', 'Sesiones mensuales'],
